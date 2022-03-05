@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze</title>
+</head>
+
+<body>
+    <div style="width: 100%;">
+        <canvas class="maze" style="margin-left: auto; margin-right: auto;"></canvas>
+        <form action="" style="display: flex; flex-direction: row;">
+            <select name="mySelect" id="mySelect">
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+            </select>
+            <button id="myBtn">Generate !</button>
+        </form>
+
+    </div>
+    <script src="Cell.js"></script>
+    <script src="Maze.js">
+
+
+    </script>
+
+</body>
+<script>
+    document.getElementById("myBtn").addEventListener("click", (evt) => {
+        evt.preventDefault();
+        let size = document.getElementById("mySelect").value;
+        console.log(size);
+        var newMaze = new Maze(500, size, size);
+        newMaze.setUpCanvas();
+        newMaze.draw();
+    })
+</script>
+
+</html>
